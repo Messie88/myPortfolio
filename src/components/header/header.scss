@@ -22,6 +22,11 @@
         font-size: 30px;
         font-weight: 900;
         z-index: 10;
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
     }
 
     .projects {
@@ -30,42 +35,48 @@
     }
 
     .menu {
+        background: #394359;
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
         margin-right: 150px;
-        width: 40px;
-        height: 20px;
+        width: 45px;
+        height: 35px;
         cursor: pointer;
-        top: -10px;
         z-index: 10;
+        top: -5px;
 
-        .menu-logo {
-            content: "";
-            display: flex;
-            position: relative;
-            width: 40px;
-            height: 2.5px;
-            background: #fff;
+        
 
-            &:after {
-               content: "";
-               position: absolute;
-               width: 40px;
-               height: 2.5px;
-               background: #fff;
-               top: 8px;
-            }
+        .one {
+           content: "";
+           position: absolute;
+           display: flex;
+           width: 30px;
+           height: 2.5px;
+           background: #fff;
+           top: 10px;
+        }
 
-            &:before {
-               content: "";
-               position: absolute;
-               width: 40px;
-               height: 2px;
-               background: #fff;
-               top: -8px;
-            }
+        .two {
+           content: "";
+           position: absolute;
+           display: flex;
+           width: 30px;
+           height: 2px;
+           background: #fff;
+           top: 17px;
+        }
+
+        .three {
+           content: "";
+           position: absolute;
+           display: flex;
+           width: 30px;
+           height: 2px;
+           background: #fff;
+           top: 24px;
         }
 
         

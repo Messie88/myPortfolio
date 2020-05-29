@@ -21,18 +21,39 @@ $blu: #394359;
         width: 100%;
         overflow: hidden;
 
+        .background-image {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            animation-name: backgroundEffect;
+            animation-duration: 15s;
+            animation-iteration-count: infinite;
+        }
+            
+
         .container {
             display: flex;
             justify-content: space-around;
             align-items: center;
             width: 100%;
             height: 100%;
+            position: relative;
 
             .menu-links {
                 display: flex;            
                 justify-content: center;
                 align-items: center;
                 position: relative;
+                //border: 1px solid red;
+                overflow: hidden;
+                top: 400px;
 
                 nav {
                    display: block;
@@ -47,26 +68,37 @@ $blu: #394359;
                            font-weight: 700;
                            cursor: pointer;
                            height: 135px;
-                           //overflow: hidden;
+                           overflow: hidden;
                            position: relative;
-                           width: 700px;
+                           width: 550px;
+
+                           &:hover {
+                               
+                               span {
+                                   color: $blu;
+                               }
+                           }
 
                            span {
-                               position: relative;
-                               top: -45px;
+                               position: absolute;
+                               font-weight: 100;
+                               right: -25px;
+                               display: flex;
+                               color: #fff;
                                
                                &.big-span {
-                                padding-left: 10px;
-                                font-size: 2rem;
+                                font-size: 2.5rem;
+                                top: 15px;
+                                right: -55px;
                                }
 
                                &.small-span {
-                                   display: none;
+                                   display: block;
                                    font-size: 1.2rem;
-                                   top: 0;
-                                   width: 10px;
+                                   top: 5px;
+                                   width: 100px;
                                    height: 40px;
-                                   padding-left: 5px;
+                                   right: -105px;
                                }
                             }
 
@@ -74,11 +106,7 @@ $blu: #394359;
                                position: absolute;
                                color: $blu;
                                text-decoration: none;
-                               transition: .3s ease-in-out;
-
-                               &:hover {
-                                   color: #fff;
-                               }
+                               transition: .1s ease-in-out;
                             }
                        }
                    }
@@ -88,6 +116,7 @@ $blu: #394359;
             .social {
                 width: 400px;
                 line-height: 30px;
+                overflow: hidden;
 
                 h3 {
                     font-size: 2rem;
@@ -113,4 +142,22 @@ $blu: #394359;
             }
         } 
     }
+}
+
+@keyframes backgroundEffect {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 20% 10%;
+  }
+  50% {
+    background-position: 0 10%;
+  }
+  75% {
+    background-position: 10% 20%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
 }
