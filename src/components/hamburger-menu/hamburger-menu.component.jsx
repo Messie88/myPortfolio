@@ -8,11 +8,15 @@ import './hamburger-menu.scss';
 import Portfolio from "../../images/portfolio2.jpeg";
 import About from "../../images/about2.jpeg";
 import Contact from "../../images/contact.jpeg";
+import Github from "../../images/gitRepo.jpg";
+import Linkedin from "../../images/linkedin.jpg";
 
 const images = [
     {image: Portfolio},
     {image: About},
-    {image: Contact}
+    {image: Contact},
+    {image: Github},
+    {image: Linkedin}
 ];
 
 const Hamburger = ({ state }) => {
@@ -26,6 +30,8 @@ const Hamburger = ({ state }) => {
     let line1 = useRef(null);
     let line2 = useRef(null);
     let line3 = useRef(null);
+    //let line4 = useRef(null);
+    //let line5 = useRef(null);
     let social = useRef(null);
     let menuLinks = useRef(null);
 
@@ -220,8 +226,30 @@ const Hamburger = ({ state }) => {
                 ref={el => { social = el }}
                 >
                     <h3><em>Let's go social:</em></h3>
-                    <a href="https://github.com/Messie88">Github</a>
-                    <a href="https://www.linkedin.com/in/pathe-messie-nungi-pambu/">LinkedIn</a>
+                    <a 
+                    //ref={el => { line3 = el }}
+                    onMouseEnter={e => {
+                        //handleOver(e);
+                        handleCity(images[3].image)
+                    }}
+                    onMouseOut={e => {
+                        handleOverExit(e);
+                        handleCityReturn(e)
+                    }}
+                    target="_blank"
+                    href="https://github.com/Messie88" rel="noopener noreferrer" >Github</a>
+                    <a
+                    //ref={el => { line3 = el }}
+                    onMouseEnter={e => {
+                        //handleOver(e);
+                        handleCity(images[4].image)
+                    }}
+                    onMouseOut={e => {
+                        handleOverExit(e);
+                        handleCityReturn(e)
+                    }} 
+                    target="_blank"
+                    href="https://www.linkedin.com/in/pathe-messie-nungi-pambu/" rel="noopener noreferrer" >LinkedIn</a>
                 </div>
             </div>
         </div>

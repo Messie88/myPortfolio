@@ -3,14 +3,18 @@ import { withRouter, Link } from "react-router-dom";
 import './header.scss';
 
 import Hamburger from "../hamburger-menu/hamburger-menu.component";
-import gsap from "gsap";
-import { delay } from "q";
+import {TimelineLite, gsap, Power3, TweenMax} from "gsap";
 
 const Header = ({ history }) => {
 
     let close1 = useRef(null);
     let close2 = useRef(null);
     let close3 = useRef(null);
+    let menuLogo = useRef(null);
+    let menuProject = useRef(null);
+    let menuIcon = useRef(null);
+
+    let tl = new TimelineLite({delay: .8});
 
 
     // State for menu button
@@ -23,25 +27,49 @@ const Header = ({ history }) => {
     const [disabled, setDisabled] = useState(false);
 
     useEffect(() => {
+      // HEADER ANIMATIONS
+      tl.from(menuLogo, 0.1, {
+        y: '15px',
+        ease: "back",
+        //delay: .5,
+        opacity: 0
+      }, 'Start');
+      tl.from(menuProject, 0.1, {
+        y: '15px',
+        ease: "back",
+        //delay: .7,
+        opacity: 0
+      }, 'Start');
+      tl.from( menuIcon, 0.1, {
+        y: '15px',
+        ease: "back",
+        //delay: .5,
+        opacity: 0
+      }, 'Start');
+
       // Menu icon animations
         if (state.clicked === true) {
-          gsap.to(close1, {
+          TweenMax.to(close1, {
             css: {
               rotation: 45,
-              top: 17
+              top: 20
             }
           });
-          gsap.to(close2, {
+          TweenMax.to(close2, {
             opacity: 0
           });
-          gsap.to(close3, {
+          TweenMax.to(close3, {
             css: {
               rotation: -45,
-              top: 17
+              top: 20
             }
           });
         } else if (state.clicked === false) {
-          gsap.to(close1, {
+          TweenMax.to([menuLogo, menuProject, menuIcon], 0, {
+            y: 0,
+            delay: 0
+          });
+          TweenMax.to(close1, {
             css: {
               rotation: 0,
               top: 10,
@@ -49,12 +77,12 @@ const Header = ({ history }) => {
             delay: .3,
             duration: .5
           });
-          gsap.to(close2, {
+          TweenMax.to(close2, {
             opacity: 1,
             delay: .5,
             duration: .5
           });
-          gsap.to(close3, {
+          TweenMax.to(close3, {
             css: {
               rotation: 0,
               top: 24,
@@ -102,15 +130,16 @@ const Header = ({ history }) => {
 
     return (
       <div className="header">
-        <div className="logo">
+        <div className="logo" ref={ el => menuLogo=el}>
             <Link to='/'>M</Link>
         </div>
-        <div className="projects">
+        <div className="projects" ref={ el => menuProject=el}>
             Projects
         </div>
         <div className="menu" 
         onClick={handleMenu} 
-        disabled={disabled}>
+        disabled={disabled}
+         ref={ el => menuIcon=el}>
             <div className="one" ref={el => {close1=el}}></div>
             <div className="two" ref={el => {close2=el}}></div>
             <div className="three" ref={el => {close3=el}}></div>

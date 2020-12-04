@@ -1,5 +1,7 @@
 import React, { useRef, useEffect } from "react";
 
+import Parallax from 'parallax-js';
+
 import { TweenMax, Power3, TimelineLite } from "gsap";
 
 import './hero.scss';
@@ -18,6 +20,14 @@ const Hero = () => {
   let tl = new TimelineLite({delay: .8});
 
   useEffect(() => {
+    // Parallax effect on images
+    var scene = document.getElementById('scene');
+    var parallaxInstance = new Parallax(scene, {
+      relativeInput: true,
+      calibrateX: true
+    });
+    parallaxInstance.calibrate(10, .5);
+
     //Images Vars
     const firstImg = images.firstElementChild;
     const secondImg = images.lastElementChild;
@@ -32,7 +42,8 @@ const Hero = () => {
     //console.log( headlineFirst, headlineSecond)
 
     TweenMax.to(app, 0, {
-      css: {visibility: 'visible', background: '#394359'}
+      css: {visibility: 'visible', background: '#394359'},
+      ease: Power3.easeOut
     });
     
     //Images Animations
@@ -42,11 +53,7 @@ const Hero = () => {
       {scale: 1.6, ease: Power3.easeOut },
       .2
     )
-    .from( firstImg,
-      1.5,
-      {y: 1580, ease: Power3.easeOut},
-      .2
-    )
+    .from( firstImg, 1.5, {y: 1580, ease: Power3.easeOut}, .2)
     .from( firstImg.firstElementChild, 
       2, 
       { scale: 1.6, ease: Power3.easeOut },
@@ -56,18 +63,18 @@ const Hero = () => {
     //Content Animations
     tl.staggerFrom([headlineFirst, headlineSecond], 1, {
       y: 70,
-      ease: Power3.easeOut,
+      ease: "back",
       delay: .8,
     }, .15, 'Start')
     .from(contentP, 1, {
       y:20,
       opacity: 0,
-      ease: Power3.easeOut,
+      ease: "back",
     }, 1.4)
     .from(contentButton, 1, {
       y:20,
       opacity: 0,
-      ease: Power3.easeOut,
+      ease: "back",
     }, 1.6)
 
   });
@@ -104,11 +111,20 @@ const Hero = () => {
             </div>
           </div>
           <div className="hero-images">
-            <div className="hero-images-inner" ref={el => images = el}>
-              <div className="hero-image first">
+            <div className="hero-images-inner" 
+            ref={el => images = el}
+            data-relative-input="true"
+            data-calibrate-x='true'
+            id="scene"
+            >
+              <div className="hero-image first"
+              data-depth="0.2"
+              >
                 <img src={firstImage} alt="front-img"/>
               </div>
-              <div className="hero-image second">
+              <div className="hero-image second"
+              data-depth="0.4"
+              >
                 <img src={secondImage} alt="back-img"/>
               </div>
             </div>

@@ -1,12 +1,12 @@
 .header {
     display: flex;
     justify-content: space-between;
-    height: 100px;
-    //background: #394359;
+    height: 80px;
     margin: 0 auto;
     align-items: center;
     z-index: 10;
     position: relative;
+    overflow: hidden;
 
     .logo {
         display: flex;
@@ -32,6 +32,8 @@
     .projects {
         color: white;
         position: relative;
+        //font-weight: lighter;
+        cursor: pointer;
     }
 
     .menu {
@@ -42,11 +44,11 @@
         justify-content: center;
         margin-right: 150px;
         width: 45px;
-        height: 35px;
+        height: 45px;
         cursor: pointer;
         z-index: 10;
-        top: -5px;
-
+        top: -2px;
+        border-radius: 50%;
         
 
         .one {
