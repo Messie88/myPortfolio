@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,600;0,900;1,200&family=Poppins:ital,wght@0,200;0,300;0,500;0,600;1,400&display=swap;900,0");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+
+.hero {
+  visibility: hidden;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+
+  .container {
+    width: 80%;
+    margin: 0 auto;
+
+    .heroInner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100vh;
+
+      .heroContent {
+        width: 50%;
+
+        .heroContentInner {
+          margin: 0 auto;
+          color: #fff;
+          padding-left: 5px;
+
+          h1 {
+            font-weight: 900;
+            font-size: 10vh;
+            letter-spacing: 5px;
+            margin-bottom: 15px;
+            margin: 0;
+            padding: 0;
+            font-family: "Abril Fatface", cursive;
+            color: #d88a83;
+            line-height: 75px;
+
+            .small {
+              font-weight: 100;
+              font-size: 30px;
+              line-height: 20px;
+              color: #fff;
+              letter-spacing: 3.6px;
+              -webkit-text-stroke: 0px;
+              margin-bottom: 10px;
+              font-family: "Poppins", sans-serif;
+            }
+            .heroContentLine {
+              margin: 0;
+              padding: 0;
+              overflow: hidden;
+              padding-top: 40px;
+            }
+          }
+
+          p {
+            font-size: 16px;
+            line-height: 25px;
+            font-weight: 300;
+            margin-bottom: 56px;
+          }
+
+          .btnRow {
+            position: relative;
+            //left: 62%;
+
+            &:before {
+              position: absolute;
+              content: "";
+              width: 56px;
+              height: 1px;
+              background: #d88a83;
+              top: 50%;
+              left: -68px;
+            }
+
+            button {
+              background: none;
+              border: none;
+              font-size: 12px;
+              padding: 0;
+              cursor: pointer;
+              text-transform: uppercase;
+              font-weight: 700;
+              letter-spacing: 1px;
+              display: flex;
+              align-items: center;
+              position: relative;
+
+              &:focus {
+                outline: none;
+              }
+
+              .arrowIcon {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #d88a83;
+                height: 42px;
+                width: 42px;
+                border-radius: 100px;
+                left: 80px;
+              }
+            }
+          }
+        }
+      }
+
+      .heroImages {
+        width: 50%;
+        height: 100%;
+
+        .heroImagesInner {
+          top: 0px;
+          width: 100%;
+          height: 100vh;
+          position: relative;
+          padding-top: 100px;
+
+          .heroImage {
+            position: absolute;
+            //overflow: hidden;
+
+            .second {
+              bottom: 100px;
+              right: 12.5%;
+              width: 40%;
+              height: 50%;
+              margin-left: 335px;
+            }
+
+            .first {
+              bottom: 150px;
+              left: -27px;
+              width: 45%;
+              height: 73%;
+            }
+
+            img {
+              position: absolute;
+              top: 100px;
+              right: 0;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,160 @@
+$beige: #d88a83;
+$blu: #394359;
+
+.hamburgerMenu {
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+
+  .menuContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: $beige;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    .backgroundImage {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+      animation-name: backgroundEffect;
+      animation-duration: 15s;
+      animation-iteration-count: infinite;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      .menuLinks {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        //border: 1px solid red;
+        overflow: hidden;
+        top: 400px;
+
+        nav {
+          display: block;
+
+          ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+              list-style: none;
+              font-size: 6rem;
+              font-weight: 700;
+              cursor: pointer;
+              height: 135px;
+              overflow: hidden;
+              position: relative;
+              width: 550px;
+
+              &:hover {
+                span {
+                  color: $blu;
+                }
+              }
+
+              span {
+                position: absolute;
+                font-weight: 100;
+                right: -25px;
+                display: flex;
+                color: #fff;
+
+                &.bigSpan {
+                  font-size: 2.5rem;
+                  top: 15px;
+                  right: -55px;
+                }
+
+                &.smallSpan {
+                  display: block;
+                  font-size: 1.2rem;
+                  top: 5px;
+                  width: 100px;
+                  height: 40px;
+                  right: -105px;
+                }
+              }
+
+              a {
+                position: absolute;
+                color: $blu;
+                text-decoration: none;
+                transition: 0.1s ease-in-out;
+              }
+            }
+          }
+        }
+      }
+
+      .social {
+        width: 400px;
+        line-height: 30px;
+        overflow: hidden;
+
+        h3 {
+          font-size: 2rem;
+          font-weight: 400;
+          display: block;
+          color: #fff;
+          letter-spacing: 5px;
+        }
+
+        a {
+          text-decoration: none;
+          color: $blu;
+          padding-right: 20px;
+          font-weight: 700;
+          transition: 0.3s ease-in-out;
+          font-size: 3rem;
+
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes backgroundEffect {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 20% 10%;
+  }
+  50% {
+    background-position: 0 10%;
+  }
+  75% {
+    background-position: 10% 20%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}

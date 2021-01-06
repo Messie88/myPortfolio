@@ -1,0 +1,77 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  z-index: 10;
+  overflow: hidden;
+  text-transform: uppercase;
+
+  a {
+    text-decoration: none;
+    color: gray;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: #d88a83;
+    border: 1px solid #394359;
+    color: white;
+    font-size: 30px;
+    font-weight: 900;
+    z-index: 10;
+  }
+
+  // .projects {
+  //   color: white;
+  //   position: relative;
+  //   font-weight: lighter;
+  //   cursor: pointer;
+  // }
+
+  .menu {
+    background: #394359;
+    position: relative;
+    // top: -2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+
+    .one {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 2px;
+      background: #fff;
+      top: 12px;
+    }
+
+    .two {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 2px;
+      background: #fff;
+      top: 19px;
+    }
+
+    .three {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 2px;
+      background: #fff;
+      bottom: 12px;
+    }
+  }
+}
