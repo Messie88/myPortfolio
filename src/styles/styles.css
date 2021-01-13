@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "Gilroy-Light";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Gilroy-Light"), url(/fonts/Gilroy/Gilroy-Light.otf) format("otf");
+}
+
+@font-face {
+  font-family: "Gilroy-ExtraBold";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Gilroy-ExtraBold"),
+    url(/fonts/Gilroy/Gilroy-ExtraBold.otf) format("otf");
+}
+
+@font-face {
+  font-family: "VIOLA";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Gilroy-ExtraBold"),
+    url(/fonts/viola-typeface/VIOLA.otf) format("otf");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gilroy-Light", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: "Gilroy-ExtraBold";
+}

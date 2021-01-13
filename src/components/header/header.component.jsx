@@ -27,36 +27,34 @@ const Header = () => {
 
   useEffect(() => {
     // HEADER ANIMATIONS
-    tl.from(
+    tl.to(
       menuLogo,
       0.1,
       {
-        y: "15px",
+        top: "0px",
         ease: "back",
-        //delay: .5,
-        opacity: 0,
+        opacity: 1,
       },
       "Start"
     );
-    tl.from(
-      menuProject,
-      0.1,
-      {
-        y: "15px",
-        ease: "back",
-        //delay: .7,
-        opacity: 0,
-      },
-      "Start"
-    );
-    tl.from(
+    // tl.from(
+    //   menuProject,
+    //   0.1,
+    //   {
+    //     y: "15px",
+    //     ease: "back",
+    //     //delay: .7,
+    //     opacity: 0,
+    //   },
+    //   "Start"
+    // );
+    tl.to(
       menuIcon,
-      0.1,
+      0.3,
       {
-        y: "15px",
+        top: 0,
         ease: "back",
-        //delay: .5,
-        opacity: 0,
+        opacity: 1,
       },
       "Start"
     );
@@ -79,7 +77,7 @@ const Header = () => {
         },
       });
     } else if (state.clicked === false) {
-      TweenMax.to([menuLogo, menuProject, menuIcon], 0, {
+      TweenMax.to([menuLogo, /*menuProject,*/ menuIcon], 0, {
         y: 0,
         delay: 0,
       });
@@ -110,7 +108,7 @@ const Header = () => {
     // history.listen(() => {
     // setState({ clicked: false });
     // });
-  });
+  }, []);
 
   const handleMenu = () => {
     disableMenu();
@@ -144,12 +142,20 @@ const Header = () => {
 
   return (
     <div className={classes.header}>
-      <div className={classes.logo} ref={(el) => (menuLogo = el)}>
-        <Link href="/">M</Link>
-      </div>
-      <div className="projects" ref={(el) => (menuProject = el)}>
-        <Link href="/projects">Projects</Link>
-      </div>
+      <Link href="/">
+        <div
+          className={classes.logo}
+          ref={(el) => (menuLogo = el)}
+          onClick={() => setState({ clicked: false })}
+        >
+          <a>M.</a>
+        </div>
+      </Link>
+      {/* <div className={classes.projects} ref={(el) => (menuProject = el)}>
+        <Link href="/projects">
+          <a>Projects</a>
+        </Link>
+      </div> */}
       <div
         className={classes.menu}
         onClick={handleMenu}

@@ -1,9 +1,13 @@
 import React from "react";
 
-import classes from "./Layout.module.scss";
+import styles from "./Layout.module.scss";
 
-const Layout = ({ children }) => {
-  return <div className={classes.container}>{children}</div>;
+const Layout = ({ children, color }) => {
+  return (
+    <div className={styles.container} id={color && styles.color}>
+      <div className={styles.containerInner}>{children}</div>
+    </div>
+  );
 };
 
 export default Layout;
