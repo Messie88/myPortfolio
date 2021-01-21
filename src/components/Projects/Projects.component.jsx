@@ -1,62 +1,77 @@
-import React, { useEffect, useRef, useState } from "react";
-import { TweenMax, Power3, TimelineLite } from "gsap";
-import $ from "jquery";
+import React, { useEffect, useRef } from "react";
+import { gsap, Power3 } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import ProjectItemLeft from "./components/ProjectItemLeft";
 import ProjectItemRight from "./components/ProjectItemRigth";
 
-// SwiperJS
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// import Swiper core and required components
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-
-//Swiper styles
-// import "swiper/swiper.scss";
-// import "swiper/components/navigation/navigation.scss";
-// import "swiper/components/pagination/pagination.scss";
-// import "swiper/components/scrollbar/scrollbar.scss";
-
 import classes from "./Projects.module.scss";
 
-// install Swiper components
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
-  var title1 = useRef(null);
-  var title2 = useRef(null);
-  var title3 = useRef(null);
-  var titleSpan1 = useRef(null);
-  var titleSpan2 = useRef(null);
-  var titleSpan3 = useRef(null);
-  var num1 = useRef(null);
-  var num2 = useRef(null);
-  var num3 = useRef(null);
+  let paragraph = useRef(null);
+  let paragraph2 = useRef(null);
+  let title = useRef(null);
+  let projectTitle1 = useRef(null);
+  let projectTitle2 = useRef(null);
 
-  // useEffect(() => {
-  //   TweenMax.from(
-  //     [
-  //       title1,
-  //       title2,
-  //       title2,
-  //       titleSpan1,
-  //       titleSpan2,
-  //       titleSpan3,
-  //       num1,
-  //       num2,
-  //       num3,
-  //     ],
-  //     1.5,
-  //     {
-  //       y: 200,
-  //     }
-  //   );
-  // });
+  useEffect(() => {
+    gsap.from(paragraph, 1, {
+      scrollTrigger: {
+        trigger: paragraph,
+        toggleActions: "restart play reverse",
+        end: "top 58.3%",
+      },
+      y: -50,
+      ease: Power3.easeOut,
+    });
+    gsap.from(title, 1, {
+      scrollTrigger: {
+        trigger: title,
+        toggleActions: "restart play reverse",
+        end: "top 80%",
+      },
+      y: 120,
+      ease: "back",
+    });
+    gsap.from(paragraph2, 1, {
+      scrollTrigger: {
+        trigger: paragraph2,
+        toggleActions: "restart play reverse",
+        end: "top 32%",
+      },
+      y: -50,
+      ease: "inOut",
+      delay: 0.5,
+    });
+    gsap.from(projectTitle1, 1.5, {
+      scrollTrigger: {
+        trigger: projectTitle1,
+        toggleActions: "restart play reverse",
+        end: "top 63%",
+      },
+      y: 200,
+      ease: "back",
+    });
+    gsap.from(projectTitle2, 1.5, {
+      scrollTrigger: {
+        trigger: projectTitle2,
+        toggleActions: "restart play reverse",
+        end: "top 80%",
+      },
+      y: 200,
+      ease: "back",
+      delay: 0.3,
+    });
+  });
 
   return (
     <div className={classes.projects}>
-      <p>Look at some of my</p>
-      <h1>WORKS</h1>
+      <div className={classes.title}>
+        <p ref={(el) => (paragraph = el)}>Look at some of my</p>
+        <h1 ref={(el) => (title = el)}>WORKS</h1>
+      </div>
       <ProjectItemLeft
         title="Telaqua"
         subtitle="The landing page"
@@ -72,12 +87,13 @@ const Projects = () => {
         image="/images/telaquaWebApp.png"
       />
 
-      {/* TO DELETE */}
-
-      <p>And some of my</p>
-      <h1>
-        (PERSONAL) <br /> PROJECTS
-      </h1>
+      <div className={classes.projectTitle}>
+        <p ref={(el) => (paragraph2 = el)}>And some of my</p>
+        <h1 ref={(el) => (projectTitle1 = el)}>(PERSONAL)</h1>
+      </div>
+      <div className={classes.projectTitle}>
+        <h1 ref={(el) => (projectTitle2 = el)}>PROJECTS</h1>
+      </div>
 
       <ProjectItemLeft
         title="Netflix"

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { TimelineLite, gsap, Power3, TweenMax } from "gsap";
+import { TimelineLite, TweenMax } from "gsap";
 
 import Hamburger from "./Hamburger";
 

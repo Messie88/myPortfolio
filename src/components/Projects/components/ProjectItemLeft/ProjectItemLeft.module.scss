@@ -6,19 +6,27 @@ $blu: #394359;
   justify-content: space-around;
   position: relative;
   margin-bottom: 200px;
+  height: 400px;
 
   .content {
-    width: 40%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding-left: 100px;
     position: relative;
+    z-index: 2;
 
-    h3 {
+    .h3 {
+      display: flex;
       font-size: 7vw;
       color: $brown;
       margin: 0;
+      overflow: hidden;
+
+      h3 {
+        margin: 0;
+      }
     }
 
     span {
@@ -28,6 +36,7 @@ $blu: #394359;
 
     p {
       margin: 0;
+      overflow: hidden;
     }
 
     .technos {
@@ -43,7 +52,7 @@ $blu: #394359;
       }
 
       p {
-        width: 70%;
+        width: 65%;
         color: white;
         margin: 0;
         margin-left: 10px;
@@ -53,11 +62,11 @@ $blu: #394359;
   }
 
   .image {
-    height: 500px;
+    height: 100%;
     width: 50%;
-    border: 1px solid $blu;
     background-size: cover;
     transition: all 0.3s ease-in-out;
+    overflow: hidden;
 
     img {
       height: 100%;

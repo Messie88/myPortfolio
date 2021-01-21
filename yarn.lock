@@ -3921,6 +3921,11 @@ csstype@^2.2.0:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.10.tgz#e63af50e66d7c266edb6b32909cfd0aabe03928b"
   integrity sha512-D34BqZU4cIlMCY93rZHbrq9pjTAQJ3U8S8rfBqjwHxkGPThWFjzZDQpgMJY0QViLxth6ZKYiwFBo14RdN44U/w==
 
+curtainsjs@^8.0.2:
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/curtainsjs/-/curtainsjs-8.0.2.tgz#dbd4e7125298b0a91d269008da9c2427536df099"
+  integrity sha512-YqMmioPVba+Ig6D+n3cEaYJXIyvn92m/77ZH0E1T4aBByIMeoohhtZD9W1/IBC61l1d7a9GcVEKNjaKMMRtPcQ==
+
 cyclist@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
