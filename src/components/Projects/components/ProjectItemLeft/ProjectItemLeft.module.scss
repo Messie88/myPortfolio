@@ -3,25 +3,21 @@ $blu: #394359;
 
 .container {
   display: flex;
-  justify-content: space-around;
-  position: relative;
-  margin-bottom: 200px;
-  height: 400px;
+  justify-content: center;
+  margin-bottom: 150px;
+  height: 350px;
 
   .content {
-    width: 50%;
+    width: 300px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding-left: 100px;
-    position: relative;
-    z-index: 2;
+    align-items: flex-end;
+    justify-content: center;
+    padding-right: 20px;
 
     .h3 {
-      display: flex;
-      font-size: 7vw;
+      font-size: 5vw;
       color: $brown;
-      margin: 0;
       overflow: hidden;
 
       h3 {
@@ -36,35 +32,31 @@ $blu: #394359;
 
     p {
       margin: 0;
-      overflow: hidden;
     }
 
     .technos {
-      display: flex;
-      align-items: flex-start;
-      position: absolute;
-      bottom: 0;
+      margin-top: 50px;
+      padding: 20px 0;
+      overflow: hidden;
 
       h5 {
-        font-size: 1.1rem;
+        font-size: 1rem;
         margin: 0;
         font-family: "VIOLA";
       }
 
       p {
-        width: 65%;
         color: white;
         margin: 0;
-        margin-left: 10px;
         line-height: 20px;
+        background: $blu;
       }
     }
   }
 
   .image {
     height: 100%;
-    width: 50%;
-    background-size: cover;
+    width: 500px;
     transition: all 0.3s ease-in-out;
     overflow: hidden;
 
@@ -73,6 +65,7 @@ $blu: #394359;
       width: 100%;
       object-fit: cover;
       filter: grayscale(90%);
+      cursor: pointer;
 
       &:hover {
         filter: none;

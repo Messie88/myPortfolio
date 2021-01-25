@@ -3,23 +3,21 @@ $blu: #394359;
 
 .container {
   display: flex;
-  justify-content: space-around;
-  position: relative;
+  justify-content: center;
   margin-bottom: 150px;
-  height: 400px;
+  height: 350px;
 
   .content {
-    width: 40%;
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    position: relative;
+    justify-content: center;
+    padding-left: 20px;
 
     .h3 {
-      display: flex;
-      font-size: 7vw;
+      font-size: 5vw;
       color: $brown;
-      margin: 0;
       overflow: hidden;
 
       h3 {
@@ -34,14 +32,12 @@ $blu: #394359;
 
     p {
       margin: 0;
-      overflow: hidden;
     }
 
     .technos {
-      display: flex;
-      align-items: flex-start;
-      position: absolute;
-      bottom: 0;
+      margin-top: 50px;
+      padding: 20px 0;
+      overflow: hidden;
 
       h5 {
         font-size: 1rem;
@@ -50,19 +46,17 @@ $blu: #394359;
       }
 
       p {
-        width: 60%;
         color: white;
         margin: 0;
-        margin-left: 10px;
         line-height: 20px;
+        background: $blu;
       }
     }
   }
 
   .image {
     height: 100%;
-    width: 50%;
-    background-size: cover;
+    width: 500px;
     transition: all 0.3s ease-in-out;
     overflow: hidden;
 
@@ -71,6 +65,7 @@ $blu: #394359;
       width: 100%;
       object-fit: cover;
       filter: grayscale(90%);
+      cursor: pointer;
 
       &:hover {
         filter: none;

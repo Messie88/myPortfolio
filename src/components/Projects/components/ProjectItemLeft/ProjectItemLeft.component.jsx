@@ -10,6 +10,8 @@ const ProjectItemLeft = ({ title, subtitle, technos, image }) => {
   let h3 = useRef(null);
   let para = useRef(null);
   let photo = useRef(null);
+  let technosTitle = useRef(null);
+  let technosPara = useRef(null);
 
   useEffect(() => {
     gsap.from(h3, 1, {
@@ -18,18 +20,36 @@ const ProjectItemLeft = ({ title, subtitle, technos, image }) => {
         toggleActions: "restart play reverse",
         end: "top 94%",
       },
-      y: 120,
+      y: 200,
       ease: "back",
     });
     gsap.from(para, 1, {
       scrollTrigger: {
         trigger: para,
         toggleActions: "restart play reverse",
-        end: "top 94%",
+        end: "top 80%",
       },
       opacity: 0,
-      letterSpacing: "1rem",
+      ease: "back",
       //delay: 5,
+    });
+    gsap.from(technosTitle, 1, {
+      scrollTrigger: {
+        trigger: technosTitle,
+        toggleActions: "restart play reverse",
+        end: "top 98%",
+      },
+      y: 200,
+      ease: "back",
+    });
+    gsap.from(technosPara, 1.2, {
+      scrollTrigger: {
+        trigger: technosPara,
+        toggleActions: "restart play reverse",
+        end: "top 98%",
+      },
+      y: 200,
+      ease: "inOut",
     });
     gsap.from(photo, 1.2, {
       scrollTrigger: {
@@ -52,9 +72,10 @@ const ProjectItemLeft = ({ title, subtitle, technos, image }) => {
         <p>
           <span ref={(el) => (para = el)}>{subtitle}</span>
         </p>
+
         <div className={styles.technos}>
-          <h5>Main Technos :</h5>
-          <p>{technos}</p>
+          <h5 ref={(el) => (technosTitle = el)}>Main Technos :</h5>
+          <p ref={(el) => (technosPara = el)}>{technos}</p>
         </div>
       </div>
       <div className={styles.image}>

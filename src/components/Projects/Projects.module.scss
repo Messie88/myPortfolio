@@ -9,10 +9,14 @@ $blu: #394359;
   margin: 0;
 
   .title {
-    height: 150px;
+    height: 160px;
     overflow: hidden;
     padding-top: 10px;
     margin: 0;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
 
   h1 {
