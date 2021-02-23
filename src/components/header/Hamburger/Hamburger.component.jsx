@@ -2,12 +2,6 @@ import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import { gsap, Power3 } from "gsap";
 
-// import Portfolio from "/images/portfolio2.jpeg";
-// import About from "/images/about2.jpeg";
-// import Contact from "/images/contact.jpeg";
-// import Github from "/images/gitRepo.jpg";
-// import Linkedin from "/images/linkedin.jpg";
-
 import classes from "./Hamburger.module.scss";
 
 const images = [

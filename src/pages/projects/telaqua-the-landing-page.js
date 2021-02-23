@@ -1,28 +1,29 @@
 import React from "react";
 
-import ProjectItem from "../../components/Projects/components/ProjectItem";
-import Layout from "../../components/Layout";
+import ProjectItem from "./ProjectItem";
+
 
 const telaquaLandingPage = () => {
-  return (
-    <Layout color>
+  return (   
       <ProjectItem
         heroImage="/images/telaqua.png"
         title="Telaqua"
-        role="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita
-              quam aliquid earum, porro quisquam perspiciatis iusto amet
-              nesciunt officiis cupiditate?"
-        challenges="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita
-        quam aliquid earum, porro"
-        technos="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita
-        quam aliquid earum"
+        role="WEB DEVELOPMENT"
+        challenges="Learn Nextjs, i18n, TypeScript, the Scrum workflow and then, migrating the project to gatsby. All this in less than 3 months"
+        technos="NextJs, GatsbyJs, ReactJs, TypeScript, Styled-Components, i18n
+        (for translation )"
         linkToSeeLive="link"
         imageOne="/images/telaqua.png"
-        imageTwo="/images/telaqua.png"
-        imageThree="/images/telaqua.png"
+        imageTwo="/images/agromote.png"
+        imageThree="/images/howItWorks.png"
+        tabletImageOne="/images/agromoteTablet.png"
+        tabletImageTwo="/images/tabletPresence.png"
+        tabletImageThree="/images/tabletSolution.png"
+        mobileImageOne="/images/mobileApp.png"
+        mobileImageTwo="/images/mobileHowItWorks.png"
+        mobileImageThree="/images/mobileAgro.png" 
         previousLink="/"
       />
-    </Layout>
   );
 };
 

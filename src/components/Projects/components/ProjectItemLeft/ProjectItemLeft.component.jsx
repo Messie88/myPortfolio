@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import Link from "next/link";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
@@ -6,7 +7,7 @@ import styles from "./ProjectItemLeft.module.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ProjectItemLeft = ({ title, subtitle, technos, image }) => {
+const ProjectItemLeft = ({ title, subtitle, technos, image, link }) => {
   let h3 = useRef(null);
   let para = useRef(null);
   let photo = useRef(null);
@@ -79,7 +80,9 @@ const ProjectItemLeft = ({ title, subtitle, technos, image }) => {
         </div>
       </div>
       <div className={styles.image}>
-        <img src={image} alt="Project" ref={(el) => (photo = el)} />
+      <Link href={link}>
+          <img src={image} alt="Project" ref={(el) => (photo = el)} />
+        </Link>
       </div>
     </div>
   );

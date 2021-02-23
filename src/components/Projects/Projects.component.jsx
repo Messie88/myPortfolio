@@ -78,6 +78,7 @@ const Projects = () => {
         technos=" NextJs, GatsbyJs, ReactJs, TypeScript, Styled-Components, i18n
               (for translation )"
         image="/images/telaqua.png"
+        link="/projects/telaqua-the-landing-page"
       />
       <ProjectItemRight
         title="Telaqua"
@@ -100,6 +101,7 @@ const Projects = () => {
         subtitle="The frontend Clone"
         technos=" ReactJs,  Sass, Axios, React-Youtube"
         image="/images/netflix.png"
+        link="/projects/telaqua-the-landing-page"
       />
       <ProjectItemRight
         title="Amazon"

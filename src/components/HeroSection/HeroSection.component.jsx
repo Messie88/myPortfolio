@@ -3,9 +3,6 @@ import Parallax from "parallax-js";
 import { TweenMax, Power3, TimelineLite } from "gsap";
 import Link from "next/link";
 
-//Assests
-// import arrow from "../../images/arrow-rigth.svg";
-
 import styles from "./HeroSection.module.scss";
 
 const Hero = () => {
@@ -122,37 +119,19 @@ const Hero = () => {
                 artistic (design, UX, UI), my centers interests and on the other
                 my appetite for problem solving.
               </p>
-              <div className={styles.btnRow}>
+              {/*<div className={styles.btnRow}>
                 <Link href="/projects">
                   <a className={styles.exploreButton}>
                     <span>projects</span>
                     {/* <div className={styles.arrowIcon}>
                     <img src="/images/arrow-rigth.svg" alt="arrow" />
-                  </div> */}
+                  </div> 
                     <div className={styles.arrowIcon}>
                       <img src="/images/DottedWhite.svg" alt="arrow" />
                     </div>
                   </a>
-                </Link>
-                <div className={styles.social}>
-                  <a
-                    href="https://github.com/Messie88"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img src="/images/github.svg" alt="arrow" />
-                    <span>github</span>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/pathe-messie-nungi-pambu/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img src="/images/linkedin.svg" alt="arrow" />
-                    <span>linkedin</span>
-                  </a>
-                </div>
-              </div>
+                </Link>      
+              </div> */}
             </div>
           </div>
           <div className={styles.heroImages}>

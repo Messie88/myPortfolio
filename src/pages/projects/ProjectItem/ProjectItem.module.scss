@@ -1,0 +1,124 @@
+$brown: #d88a83;
+$blu: #394359;
+$darkBlu: #262f43;
+
+.container {
+  color: #fff;
+  width: 90%;
+
+  .hero {
+    height: 500px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 100%;
+      height: 90%;
+      filter: grayscale(90%);
+      object-fit: cover;
+    }
+
+    .heroTitle {
+      height: 130px;
+      position: absolute;
+      bottom: -30px;
+      overflow: hidden;
+
+      h1 {
+        
+        margin: 0;
+        font-size: 7vw;
+        color: $brown;
+      }
+    }
+
+  }
+  .description {
+    display: flex;
+    margin: 100px 0 50px 0;
+    justify-content: space-between;
+
+    p {
+      font-size: 15px;
+      line-height: 20px;
+    }
+
+    .descriptionLeft {
+      width: 40%;
+      
+      div {
+        margin-bottom: 30px;
+        min-height: 50px;
+      }
+    }
+    .descriptionRight {
+      width: 40%;
+
+     
+      div {
+        margin-bottom: 30px;
+        min-height: 50px;
+      }
+
+      .descriptionRightLink {
+        display: flex;
+        justify-content: flex-end;
+
+        a {
+          color: $brown;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+        }
+      }
+
+      div {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  .images {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    img {
+      width: 400px;
+      height: 380px;
+      object-fit: cover;
+
+      &.imageTwo {
+        margin-top: 50px;
+      }
+
+      &.imageThree {
+        margin-top: 100px;
+      }
+
+      &#tabletImage {
+        min-height: 500px;
+      }
+
+      &#mobileImage {
+        object-fit: contain;
+        height: 900px;
+      }
+    }
+    
+  }
+
+  h3, .screen {
+    color: $darkBlu;
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  .screen {
+    font-size: 16px;
+    letter-spacing: 10px;
+  }
+}

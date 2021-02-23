@@ -34,29 +34,28 @@ const Header = () => {
         top: "0px",
         ease: "back",
         opacity: 1,
-      },
-      "Start"
+        delay: 0
+      }
     );
-    // tl.from(
-    //   menuProject,
-    //   0.1,
-    //   {
-    //     y: "15px",
-    //     ease: "back",
-    //     //delay: .7,
-    //     opacity: 0,
-    //   },
-    //   "Start"
-    // );
+    tl.to(
+      menuProject,
+      0.1,
+      {
+        top: "0px",
+        ease: "back",
+        delay: .1,
+        opacity: 1,
+      }
+    );
     tl.to(
       menuIcon,
-      0.3,
+      0.1,
       {
         top: 0,
         ease: "back",
         opacity: 1,
-      },
-      "Start"
+        delay: .2
+      }
     );
 
     // Menu icon animations
@@ -148,7 +147,7 @@ const Header = () => {
           ref={(el) => (menuLogo = el)}
           onClick={() => setState({ clicked: false })}
         >
-          <a>M.</a>
+          <a>M</a>
         </div>
       </Link>
       {/* <div className={classes.projects} ref={(el) => (menuProject = el)}>
@@ -156,6 +155,11 @@ const Header = () => {
           <a>Projects</a>
         </Link>
       </div> */}
+      <Link href="/projects">
+        <div className={classes.arrowIcon} ref={(el) => (menuProject = el)}>
+          <img src="/images/DottedWhite.svg" alt="arrow" />
+        </div>
+      </Link>   
       <div
         className={classes.menu}
         onClick={handleMenu}
