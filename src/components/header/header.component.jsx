@@ -150,11 +150,6 @@ const Header = () => {
           <a>M</a>
         </div>
       </Link>
-      {/* <div className={classes.projects} ref={(el) => (menuProject = el)}>
-        <Link href="/projects">
-          <a>Projects</a>
-        </Link>
-      </div> */}
       <Link href="/projects">
         <div className={classes.arrowIcon} ref={(el) => (menuProject = el)}>
           <img src="/images/DottedWhite.svg" alt="arrow" />

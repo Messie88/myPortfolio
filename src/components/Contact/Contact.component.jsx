@@ -7,9 +7,8 @@ const Contact = () => {
           <h3><i>Say hi!</i></h3>
           <div className={styles.contact}>
             <a href="mailto:messie.np@digital-village.fr"><i>messie.np@digital-village.fr</i></a>
-            <p id={styles.num}>+33 7 68 25 08 01</p>
+            <p id={styles.num}><i>+33 7 68 25 08 01</i></p>
             <div className={styles.social}>
-                <p><i>Let's go Social : </i></p>
                   <a
                     href="https://github.com/Messie88"
                     target="_blank"

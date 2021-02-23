@@ -1,10 +1,14 @@
 import React from "react";
 
 import ProjectItem from "./ProjectItem";
+import Contact from "../../components/Contact";
+import Layout from "../../components/Layout";
+
 
 
 const telaquaLandingPage = () => {
   return (   
+    <Layout color>
       <ProjectItem
         heroImage="/images/telaqua.png"
         title="Telaqua"
@@ -12,7 +16,7 @@ const telaquaLandingPage = () => {
         challenges="Learn Nextjs, i18n, TypeScript, the Scrum workflow and then, migrating the project to gatsby. All this in less than 3 months"
         technos="NextJs, GatsbyJs, ReactJs, TypeScript, Styled-Components, i18n
         (for translation )"
-        linkToSeeLive="link"
+        linkToSeeLive="https://www.telaqua.com/"
         imageOne="/images/telaqua.png"
         imageTwo="/images/agromote.png"
         imageThree="/images/howItWorks.png"
@@ -24,6 +28,8 @@ const telaquaLandingPage = () => {
         mobileImageThree="/images/mobileAgro.png" 
         previousLink="/"
       />
+      <Contact />
+    </Layout>
   );
 };
 

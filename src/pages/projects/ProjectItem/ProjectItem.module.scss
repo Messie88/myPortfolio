@@ -5,6 +5,7 @@ $darkBlu: #262f43;
 .container {
   color: #fff;
   width: 90%;
+  margin-bottom: 400px;
 
   .hero {
     height: 500px;
@@ -23,7 +24,7 @@ $darkBlu: #262f43;
     .heroTitle {
       height: 130px;
       position: absolute;
-      bottom: -30px;
+      bottom: -10px;
       overflow: hidden;
 
       h1 {

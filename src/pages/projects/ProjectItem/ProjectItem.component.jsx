@@ -2,8 +2,6 @@ import React, { useEffect, useRef } from "react";
 import { gsap, Power3 } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-import Layout from "../../../components/Layout";
-
 import styles from "./ProjectItem.module.scss";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -46,7 +44,7 @@ const ProjectItem = ({
   })
 
   return (
-    <Layout color>
+    <>
     <div className={styles.container}>
       <div className={styles.hero}>
         <img 
@@ -74,7 +72,7 @@ const ProjectItem = ({
             <p>{technos}</p>
           </div>
           <div className={styles.descriptionRightLink}>
-            <a href={linkToSeeLive}>See live</a>
+            <a href={linkToSeeLive} target="_blank" rel="noopener noreferrer">See live</a>
           </div>
         </div>
       </div>
@@ -101,7 +99,7 @@ const ProjectItem = ({
       </div>
       <div>Previous Project / next Project</div>
     </div>
-    </Layout>
+    </>
   );
 };
 

@@ -105,33 +105,32 @@ const Hero = () => {
               <h1>
                 <div className={styles.heroContentLine}>
                   <div className={styles.small}>Messie NUNGI PAMBU</div>
-                  <div className={styles.heroContentLineInner}>REACTJS</div>
+                  {/*<div className={styles.heroContentLineInner}>REACTJS</div>*/}
                   <div className={styles.heroContentLineInner}>FRONTEND</div>
                   <div className={styles.heroContentLineInner}>DEVELOPER</div>
                 </div>
               </h1>
               <p>
-                Hi, I'm <strong>Messie</strong>, a{" "}
-                <strong>Frontend Developer</strong> based in France. I am
+                Hi! I'm <strong>Messie</strong>, a{" "}
+                <strong>Frontend Developer</strong> based in France.
+                {/* I am
                 passionate about startup's world, design, pencil drawing, music,
                 anthropology, the economy. Web development is for me, a way to
                 combine some aspects of my personality, with a part on one side
                 artistic (design, UX, UI), my centers interests and on the other
-                my appetite for problem solving.
+                my appetite for problem solving.*/}
+                <br/>
+                Sensitive to design, i stress the smaller details to deliver pixel-perfect products.
+                <br/>
+                I know how precious time is, especially in business, and how challenging it can be to 
+                retain the user attention, so i adapt quickly and
+                listen carefully to your needs and i constantly try to always offer that little 
+                more than what make the difference.
               </p>
-              {/*<div className={styles.btnRow}>
-                <Link href="/projects">
-                  <a className={styles.exploreButton}>
-                    <span>projects</span>
-                    {/* <div className={styles.arrowIcon}>
-                    <img src="/images/arrow-rigth.svg" alt="arrow" />
-                  </div> 
-                    <div className={styles.arrowIcon}>
-                      <img src="/images/DottedWhite.svg" alt="arrow" />
-                    </div>
-                  </a>
-                </Link>      
-              </div> */}
+              <p>
+                <span id={styles.tag}> 
+                  #ReactJS #NextJS #JavaScript <br/>#Styled-Components #Gatsbyjs #Sass
+                </span></p>
             </div>
           </div>
           <div className={styles.heroImages}>
