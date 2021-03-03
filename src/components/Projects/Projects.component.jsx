@@ -4,8 +4,9 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import ProjectItemLeft from "./components/ProjectItemLeft";
 import ProjectItemRight from "./components/ProjectItemRigth";
+import Contact from "../Contact";
 
-import classes from "./Projects.module.scss";
+import styles from "./Projects.module.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -67,8 +68,9 @@ const Projects = () => {
   });
 
   return (
-    <div className={classes.projects}>
-      <div className={classes.title}>
+    <>
+    <div className={styles.projects}>
+      <div className={styles.title}>
         <p ref={(el) => (paragraph = el)}>Look at some of my</p>
         <h1 ref={(el) => (title = el)}>WORKS</h1>
       </div>
@@ -80,6 +82,16 @@ const Projects = () => {
         image="/images/telaqua.png"
         link="/projects/telaqua-the-landing-page"
       />
+      <div className={styles.tablet}>
+      <ProjectItemLeft
+        title="Telaqua"
+        subtitle="The Web Application"
+        technos=" ReactJs, TypeScript, Styled-Components, Apollo Client, GraphQL, i18n
+        (for translation )"
+        image="/images/telaquaWebApp.png"
+        link="/projects/telaqua-the-landing-page"
+      />
+      </div>
       <ProjectItemRight
         title="Telaqua"
         subtitle="The Web Application"
@@ -88,28 +100,47 @@ const Projects = () => {
         image="/images/telaquaWebApp.png"
       />
 
-      <div className={classes.projectTitle}>
+      <div className={styles.projectTitle}>
         <p ref={(el) => (paragraph2 = el)}>And some of my</p>
         <h1 ref={(el) => (projectTitle1 = el)}>(PERSONAL)</h1>
       </div>
-      <div className={classes.projectTitle}>
+      <div className={styles.projectTitle} id={styles.second}>
         <h1 ref={(el) => (projectTitle2 = el)}>PROJECTS</h1>
       </div>
 
       <ProjectItemLeft
+        title="Crown Clothing"
+        subtitle="An e-commerce website"
+        technos=" ReactJs,  Sass, Axios, React-Youtube"
+        image="/images/crown-clothing.png"
+        link="/projects/crown-clothing"
+      />
+      <ProjectItemRight
         title="Netflix"
         subtitle="The frontend Clone"
         technos=" ReactJs,  Sass, Axios, React-Youtube"
         image="/images/netflix.png"
-        link="/projects/telaqua-the-landing-page"
+        link="/"
       />
-      <ProjectItemRight
+      <div className={styles.tablet}>
+        <ProjectItemLeft
+          title="Netflix"
+          subtitle="The frontend Clone"
+          technos=" ReactJs,  Sass, Axios, React-Youtube"
+          image="/images/netflix.png"
+          link="/"
+        />
+      </div>
+      <ProjectItemLeft
         title="Amazon"
         subtitle="The Clone"
         technos=" ReactJs, ContextAPI, Firebase, React-Router-Dom"
         image="/images/amazon.png"
+        link="/projects/telaqua-the-landing-page"
       />
     </div>
+    <Contact />
+    </>
   );
 };
 

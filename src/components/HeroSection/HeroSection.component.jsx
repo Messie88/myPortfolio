@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import Parallax from "parallax-js";
 import { TweenMax, Power3, TimelineLite } from "gsap";
-import Link from "next/link";
 
 import styles from "./HeroSection.module.scss";
 
@@ -45,7 +44,6 @@ const Hero = () => {
     tl.from(secondImg, 1.2, { y: 1280, ease: Power3.easeOut }, "Start")
       .from(
         secondImg.lastElementChild,
-
         2,
         { y: 1200, scale: 1.6, ease: "back" },
         0.2
@@ -105,32 +103,35 @@ const Hero = () => {
               <h1>
                 <div className={styles.heroContentLine}>
                   <div className={styles.small}>Messie NUNGI PAMBU</div>
-                  {/*<div className={styles.heroContentLineInner}>REACTJS</div>*/}
                   <div className={styles.heroContentLineInner}>FRONTEND</div>
                   <div className={styles.heroContentLineInner}>DEVELOPER</div>
                 </div>
               </h1>
-              <p>
-                Hi! I'm <strong>Messie</strong>, a{" "}
-                <strong>Frontend Developer</strong> based in France.
-                {/* I am
-                passionate about startup's world, design, pencil drawing, music,
-                anthropology, the economy. Web development is for me, a way to
-                combine some aspects of my personality, with a part on one side
-                artistic (design, UX, UI), my centers interests and on the other
-                my appetite for problem solving.*/}
-                <br/>
-                Sensitive to design, i stress the smaller details to deliver pixel-perfect products.
-                <br/>
-                I know how precious time is, especially in business, and how challenging it can be to 
-                retain the user attention, so i adapt quickly and
-                listen carefully to your needs and i constantly try to always offer that little 
-                more than what make the difference.
-              </p>
-              <p>
-                <span id={styles.tag}> 
-                  #ReactJS #NextJS #JavaScript <br/>#Styled-Components #Gatsbyjs #Sass
-                </span></p>
+              <div className={styles.heroTabletImage}></div>
+              <div className={styles.heroTabletPara}>
+                <p>
+                  Hi! I'm <strong>Messie</strong>, a{" "}
+                  <strong>Frontend Developer</strong> based in France.
+                  {/* I am
+                  passionate about startup's world, design, pencil drawing, music,
+                  anthropology, the economy. Web development is for me, a way to
+                  combine some aspects of my personality, with a part on one side
+                  artistic (design, UX, UI), my centers interests and on the other
+                  my appetite for problem solving.*/}
+                  <br/>
+                  Sensitive to design, i stress the smaller details to deliver pixel-perfect products.
+                  <br/><br/>
+                  I know how precious time is, especially in business, and how challenging it can be to 
+                  retain the user attention, so i adapt quickly and
+                  listen carefully to your needs and i constantly try to always offer that little 
+                  more than what make the difference.
+                </p>
+                <p>
+                  <span id={styles.tag}> 
+                    #ReactJS #GatsbyJS #NextJS #JavaScript <br/>#Styled-Components #Redux #Scss
+                  </span>
+                </p>
+              </div>
             </div>
           </div>
           <div className={styles.heroImages}>

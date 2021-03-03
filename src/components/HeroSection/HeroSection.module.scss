@@ -1,6 +1,30 @@
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 480px;
+ 
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Small devices
+@mixin mobile {
+  @media (max-width: #{$screen-sm-min}) {
+      @content;
+  }
+}
+
+// Medium devices
+@mixin tablet {
+  @media (max-width: #{$screen-md-min}) {
+      @content;
+  }
+}
+
 .hero {
   visibility: hidden;
   width: 90%;
+
+  @include tablet {
+    width: 100%;
+  }
 
   .container {
     margin: auto 0;
@@ -9,28 +33,40 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 90vh;
+      min-height: 90vh;
+
+      @include tablet {
+        min-height: 70vh;
+        justify-content: center;
+      }
 
       .heroContent {
         width: 55%;
         z-index: 2;
 
-        #tag {
-          color: #091122cb;
-          letter-spacing: 2px;
-          line-height: 40px;
-          word-spacing: 20px;
-          font-size: 20px;
-          font-weight: 900;
-          margin: 0px;
-          font-family: "Gilroy-Light", sans-serif;
+        @include tablet {
+          width: 100%;
+          min-height: 70vh;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
-
+        
         .heroContentInner {
           margin: 0 auto;
           color: #fff;
           padding-left: 5px;
-
+          
+          @include tablet {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          
           h1 {
             font-weight: 900;
             font-size: 6vw;
@@ -41,21 +77,96 @@
             color: #d88a83;
             line-height: 6vw;
 
+            @include mobile {
+              text-align: center;
+              font-size: 12vw;
+              line-height: 12vw;
+            }
+            
             .small {
               //font-weight: 100;
               font-size: 25px;
               line-height: 20px;
               color: #262f43;
               letter-spacing: 3.6px;
-              -webkit-text-stroke: 0px;
               margin-bottom: 10px;
               font-family: "Gilroy-Light", sans-serif;
+              
+              @include tablet {
+                font-size: 15px;
+              }
             }
             .heroContentLine {
               margin: 0;
               padding: 0;
               padding-top: 40px;
               overflow: hidden;
+              
+              @include tablet {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 50px;
+              }
+            }
+          }
+          
+          .heroTabletImage {
+            width: 100%;
+            margin: 100px 0 0 0;
+            display: none;
+            height: 450px;
+            background: url('/images/image2.jpg') no-repeat top left;
+            background-size: cover;
+            
+            @include tablet {
+              display: flex;
+            }
+          }
+          
+          .heroTabletPara {
+            margin-top: 50px;
+            
+            #tag {
+              color: #091122cb;
+              letter-spacing: 2px;
+              line-height: 30px;
+              word-spacing: 20px;
+              font-size: 20px;
+              font-weight: 900;
+              margin: 0px;
+              font-family: "Gilroy-Light", sans-serif;
+            }
+            
+            @include tablet {
+              display: flex;
+              align-items: center;
+
+              p {
+                margin-right: 20px;
+                
+                #tag {
+                  font-size: 15px;
+                  line-height: 20px;
+                }
+              }
+            }
+
+            @include mobile {
+              flex-direction: column;
+              justify-content: center;
+
+              p {
+                margin: 0;
+                margin-bottom: 50px;
+              }
+
+              #tag {
+                font-size: 10px;
+                word-spacing: 0px;
+                color: white;
+                letter-spacing: 0;
+              }
             }
           }
 
@@ -113,6 +224,10 @@
       .heroImages {
         width: 50%;
         height: 100%;
+
+        @include tablet {
+          display: none;
+        }
 
         .heroImagesInner {
           top: 0px;

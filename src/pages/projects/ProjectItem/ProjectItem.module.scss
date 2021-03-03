@@ -2,6 +2,36 @@ $brown: #d88a83;
 $blu: #394359;
 $darkBlu: #262f43;
 
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 480px;
+
+//The road between large smatphone and small tablet
+$screen-sm-max: 690px;
+ 
+// Tablets (portrait view)
+$screen-md-min: 768px;
+
+// Small devices
+@mixin mobile {
+  @media (max-width: #{$screen-sm-min}) {
+      @content;
+  }
+}
+
+// Small tablet
+@mixin small {
+  @media (max-width: #{$screen-sm-max}) {
+      @content;
+  }
+}
+
+// Medium devices
+@mixin tablet {
+  @media (max-width: #{$screen-md-min}) {
+      @content;
+  }
+}
+
 .container {
   color: #fff;
   width: 90%;
@@ -41,6 +71,11 @@ $darkBlu: #262f43;
     margin: 100px 0 50px 0;
     justify-content: space-between;
 
+    @include mobile {
+      margin: 50px 0 0;
+      flex-direction: column;
+    }
+
     p {
       font-size: 15px;
       line-height: 20px;
@@ -48,24 +83,45 @@ $darkBlu: #262f43;
 
     .descriptionLeft {
       width: 40%;
+
+      @include mobile {
+        width: 100%;
+      }
       
       div {
         margin-bottom: 30px;
         min-height: 50px;
+
+      .titleContainer, .contentContainer {
+        overflow: hidden;
+        min-height: 30px !important;
+        margin: 0;
+      }
       }
     }
+
     .descriptionRight {
       width: 40%;
 
+      @include mobile {
+        width: 100%;
+      }
      
       div {
         margin-bottom: 30px;
         min-height: 50px;
+
+      .titleContainer, .contentContainer {
+        overflow: hidden;
+        min-height: 30px !important;
+        margin: 0;
+      }
       }
 
       .descriptionRightLink {
         display: flex;
         justify-content: flex-end;
+        overflow: hidden;
 
         a {
           color: $brown;
@@ -84,11 +140,27 @@ $darkBlu: #262f43;
     display: flex;
     justify-content: space-between;
     position: relative;
+    overflow: hidden;
+    
+    @include small {
+      flex-direction: column;
+    }
 
     img {
-      width: 400px;
+      max-width: 25vw;
       height: 380px;
       object-fit: cover;
+
+      @include small {
+        max-width: 100%;
+        width: 100% !important;
+        min-height: 380px;
+      }
+
+      @include tablet {
+        width: 200px;
+        height: 160px;
+      }
 
       &.imageTwo {
         margin-top: 50px;
@@ -96,15 +168,50 @@ $darkBlu: #262f43;
 
       &.imageThree {
         margin-top: 100px;
+
+        @include mobile {
+          margin-top: 50px;
+        }
+        @include small {
+          margin: 50px 0 100px 0;
+        }
       }
 
       &#tabletImage {
-        min-height: 500px;
-      }
+        //max-width: 30vw;
+        height: 500px;
 
+        @include small {
+          max-width: 100% !important;
+          min-height: 500px;
+        }
+
+        @include tablet {
+          width: 200px;
+          height: 220px;
+        }
+      }
+      
       &#mobileImage {
         object-fit: contain;
-        height: 900px;
+        height: 670px;
+        //border: 1px solid red;
+
+        @include small {
+          display: none;
+          /*max-width: 100%;
+          min-height: 800px;
+          border: 1px solid red;*/
+        }
+
+        /*@include mobile {
+          min-height: 500px;
+        } 
+
+        @include tablet {
+          width: 180px;
+          height: 400px;
+        }*/
       }
     }
     
@@ -112,14 +219,29 @@ $darkBlu: #262f43;
 
   h3, .screen {
     color: $darkBlu;
+
+    @include tablet {
+      margin-top: 0px;
+    }
   }
 
   h3 {
     margin: 0;
   }
+  
+  .screenTitle {
+    overflow: hidden;
 
-  .screen {
-    font-size: 16px;
-    letter-spacing: 10px;
+    &#screenTitleMobile {
+      @include small {
+        display: none;
+      }
+    }
+
+    .screen {
+      font-size: 16px;
+      letter-spacing: 10px;
+    }
   }
+  
 }
