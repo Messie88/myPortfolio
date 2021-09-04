@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { TimelineLite, TweenMax } from "gsap";
+import { TweenMax, gsap, Power4 } from "gsap";
 
 import Hamburger from "./Hamburger";
 
-import classes from "./Header.module.scss";
+import styles from "./Header.module.scss";
 
 const Header = () => {
   let close1 = useRef(null);
@@ -14,7 +14,6 @@ const Header = () => {
   let menuProject = useRef(null);
   let menuIcon = useRef(null);
 
-  let tl = new TimelineLite({ delay: 0.8 });
 
   // State for menu button
   const [state, setState] = useState({
@@ -26,44 +25,27 @@ const Header = () => {
   const [disabled, setDisabled] = useState(false);
 
   useEffect(() => {
-    // HEADER ANIMATIONS
-    tl.to(
-      menuLogo,
-      0.1,
-      {
-        top: "0px",
-        ease: "back",
-        opacity: 1,
-        delay: 0
-      }
-    );
-    tl.to(
-      menuProject,
-      0.1,
-      {
-        top: "0px",
-        ease: "back",
-        delay: .1,
-        opacity: 1,
-      }
-    );
-    tl.to(
-      menuIcon,
-      0.1,
-      {
-        top: 0,
-        ease: "back",
-        opacity: 1,
-        delay: .2
-      }
-    );
+    gsap.to(menuLogo, {
+      y: 0,
+      opacity: 1,
+      ease: Power4.easeOut,
+      delay: 1.3,
+      duration: 0.8,
+    })
+    gsap.to(menuIcon, {
+      y: 0,
+      opacity: 1,
+      ease: Power4.easeOut,
+      delay: 1.3,
+      duration: 0.8,
+    })
 
     // Menu icon animations
     if (state.clicked === true) {
       TweenMax.to(close1, {
         css: {
           rotation: 45,
-          top: 20,
+          top: 0,
         },
       });
       TweenMax.to(close2, {
@@ -72,7 +54,7 @@ const Header = () => {
       TweenMax.to(close3, {
         css: {
           rotation: -45,
-          top: 20,
+          top: 0,
         },
       });
     } else if (state.clicked === false) {
@@ -83,7 +65,7 @@ const Header = () => {
       TweenMax.to(close1, {
         css: {
           rotation: 0,
-          top: 10,
+          top: 0,
         },
         delay: 0.3,
         duration: 0.5,
@@ -96,7 +78,7 @@ const Header = () => {
       TweenMax.to(close3, {
         css: {
           rotation: 0,
-          top: 24,
+          top: 14,
         },
         delay: 0.5,
         duration: 0.3,
@@ -107,7 +89,7 @@ const Header = () => {
     // history.listen(() => {
     // setState({ clicked: false });
     // });
-  }, []);
+  }, [state.clicked]);
 
   const handleMenu = () => {
     disableMenu();
@@ -140,41 +122,39 @@ const Header = () => {
   };
 
   return (
-    <div className={classes.header}>
+    <div className={styles.header}>
       <Link href="/">
         <div
-          className={classes.logo}
+          className={styles.logo}
           ref={(el) => (menuLogo = el)}
           onClick={() => setState({ clicked: false })}
         >
-          <a>M</a>
+          <a>
+            <p>mes</p>
+            <p id={styles.last}>sie</p>
+          </a>
         </div>
       </Link>
-      <Link href="/projects">
-        <div className={classes.arrowIcon} ref={(el) => (menuProject = el)}>
-          <img src="/images/DottedWhite.svg" alt="arrow" />
-        </div>
-      </Link>   
       <div
-        className={classes.menu}
+        className={styles.menu}
         onClick={handleMenu}
         disabled={disabled}
         ref={(el) => (menuIcon = el)}
       >
         <div
-          className={classes.one}
+          className={styles.one}
           ref={(el) => {
             close1 = el;
           }}
         ></div>
         <div
-          className={classes.two}
+          className={styles.two}
           ref={(el) => {
             close2 = el;
           }}
         ></div>
         <div
-          className={classes.three}
+          className={styles.three}
           ref={(el) => {
             close3 = el;
           }}

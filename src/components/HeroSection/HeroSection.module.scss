@@ -1,39 +1,72 @@
 // Small tablets and large smartphones (landscape view)
 $screen-sm-min: 480px;
- 
+
 // Small tablets (portrait view)
 $screen-md-min: 768px;
 
 // Small devices
 @mixin mobile {
   @media (max-width: #{$screen-sm-min}) {
-      @content;
+    @content;
   }
 }
 
 // Medium devices
 @mixin tablet {
   @media (max-width: #{$screen-md-min}) {
-      @content;
+    @content;
   }
 }
 
 .hero {
   visibility: hidden;
   width: 90%;
+  padding: 0 70px;
+  position: relative;
+  color: #262f43;
 
   @include tablet {
     width: 100%;
   }
 
   .container {
-    margin: auto 0;
+    margin: auto;
 
     .heroInner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 90vh;
+      height: 100%;
+      width: 100%;
+      //border: yellow 1px solid;
+
+      .freelanceContainer {
+        position: absolute;
+        bottom: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+
+        p {
+          letter-spacing: 15px;
+        }
+      }
+
+      h1 {
+        font-size: 11vw;
+        letter-spacing: 1.2vw;
+        //margin-bottom: 15px;
+        margin: 0;
+        padding: 0;
+        color: #e85a4f;
+
+        @include mobile {
+          text-align: center;
+          font-size: 12vw;
+          line-height: 12vw;
+        }
+      }
 
       @include tablet {
         min-height: 70vh;
@@ -41,184 +74,109 @@ $screen-md-min: 768px;
       }
 
       .heroContent {
-        width: 55%;
-        z-index: 2;
+        height: 100%;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        //border: 1px solid green;
 
         @include tablet {
           width: 100%;
-          min-height: 70vh;
           margin: 0;
           display: flex;
-          flex-direction: column;
+          //flex-direction: column;
           align-items: center;
         }
-        
-        .heroContentInner {
-          margin: 0 auto;
-          color: #fff;
-          padding-left: 5px;
-          
+
+        // .heroContentLine {
+        //   height: 100%;
+        //   padding: 0;
+        //   //padding-top: 30px;
+        //   overflow: hidden;
+        //   border: 1px solid red;
+
+        .heroContentLineInner {
+          overflow: hidden;
+
           @include tablet {
-            width: 100%;
-            height: 100%;
-            margin: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-          }
-          
-          h1 {
-            font-weight: 900;
-            font-size: 6vw;
-            letter-spacing: 5px;
-            margin-bottom: 15px;
-            margin: 0;
-            padding: 0;
-            color: #d88a83;
-            line-height: 6vw;
-
-            @include mobile {
-              text-align: center;
-              font-size: 12vw;
-              line-height: 12vw;
-            }
-            
-            .small {
-              //font-weight: 100;
-              font-size: 25px;
-              line-height: 20px;
-              color: #262f43;
-              letter-spacing: 3.6px;
-              margin-bottom: 10px;
-              font-family: "Gilroy-Light", sans-serif;
-              
-              @include tablet {
-                font-size: 15px;
-              }
-            }
-            .heroContentLine {
-              margin: 0;
-              padding: 0;
-              padding-top: 40px;
-              overflow: hidden;
-              
-              @include tablet {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-top: 50px;
-              }
-            }
-          }
-          
-          .heroTabletImage {
-            width: 100%;
-            margin: 100px 0 0 0;
-            display: none;
-            height: 450px;
-            background: url('/images/image2.jpg') no-repeat top left;
-            background-size: cover;
-            
-            @include tablet {
-              display: flex;
-            }
-          }
-          
-          .heroTabletPara {
             margin-top: 50px;
-            
-            #tag {
-              color: #091122cb;
-              letter-spacing: 2px;
-              line-height: 30px;
-              word-spacing: 20px;
-              font-size: 20px;
-              font-weight: 900;
-              margin: 0px;
-              font-family: "Gilroy-Light", sans-serif;
-            }
-            
-            @include tablet {
-              display: flex;
-              align-items: center;
-
-              p {
-                margin-right: 20px;
-                
-                #tag {
-                  font-size: 15px;
-                  line-height: 20px;
-                }
-              }
-            }
-
-            @include mobile {
-              flex-direction: column;
-              justify-content: center;
-
-              p {
-                margin: 0;
-                margin-bottom: 50px;
-              }
-
-              #tag {
-                font-size: 10px;
-                word-spacing: 0px;
-                color: white;
-                letter-spacing: 0;
-              }
-            }
           }
+        }
 
-          p {
-            font-size: 16px;
-            line-height: 25px;
-            font-weight: 300;
-            margin: 30px 0 20px 0px;
-          }
+        //   @include tablet {
+        //     display: flex;
+        //     flex-direction: column;
+        //     align-items: center;
+        //     margin-top: 50px;
+        //   }
+        // }
 
-          .btnRow {
-            position: fixed;
-            bottom: 20px;
-            left: 0;
-            width: 100%;
-            padding: 0 50px 0 70px;
+        .heroTabletImage {
+          width: 100%;
+          margin: 100px 0 0 0;
+          display: none;
+          height: 450px;
+          background: url('/images/image2.jpg') no-repeat top left;
+          background-size: cover;
 
+          @include tablet {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
+          }
+        }
 
-            a {
-              background: none;
-              border: none;
-              text-decoration: none;
-              font-size: 8px;
-              padding: 0;
-              cursor: pointer;
-              text-transform: uppercase;
-              font-weight: 700;
-              letter-spacing: 1px;
-              display: flex;
-              align-items: center;
-              position: relative;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
+        p {
+          font-size: 12px;
+          line-height: 25px;
+          font-weight: 300;
+          margin: 30px 0 20px 0px;
+        }
 
-              span {
-                color: #d88a83;
-                opacity: 0;
-                transition: all 0.5s ease-in-out;
-                animation: projects-animation 1.5s infinite;
-              }
+        .btnRow {
+          position: fixed;
+          bottom: 20px;
+          left: 0;
+          width: 100%;
+          padding: 0 50px 0 70px;
 
-              &:hover span {
-                opacity: 1;
-                animation: none;
-              }
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+
+          a {
+            background: none;
+            border: none;
+            text-decoration: none;
+            font-size: 8px;
+            padding: 0;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            span {
+              color: #d88a83;
+              opacity: 0;
+              transition: all 0.5s ease-in-out;
+              animation: projects-animation 1.5s infinite;
+            }
+
+            &:hover span {
+              opacity: 1;
+              animation: none;
             }
           }
         }
+        // }
       }
 
       .heroImages {
@@ -230,47 +188,142 @@ $screen-md-min: 768px;
         }
 
         .heroImagesInner {
-          top: 0px;
           width: 100%;
-          height: 100vh;
+          height: calc(100vh - 140px);
           position: relative;
-          padding-top: 100px;
           display: flex;
           justify-content: space-between;
 
           .heroImage {
+            height: 50%;
+            max-width: 21.875rem;
+            width: 100%;
             position: absolute;
+            // top: 0px;
+            display: flex;
+            align-items: center;
             overflow: hidden;
-            z-index: 1;
 
             &#second {
-              bottom: 100px;
-              right: 0;
-              width: 40%;
-              height: 50%;
-              margin-left: 390px;
+              bottom: 213px;
+              right: 0px;
+              max-width: 300px;
+              border-top-right-radius: 5px;
+              border-bottom-right-radius: 5px;
             }
 
             &#first {
-              bottom: 150px;
-              margin-left: 50px;
-              width: 45%;
-              height: 73%;
+              bottom: 205px;
+
+              img {
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+              }
             }
 
             img {
               position: absolute;
-              top: 100px;
-              right: 0;
-              left: 0;
-              bottom: 0;
               width: 100%;
+              //border-radius: 5px;
+              //transform: scale(1);
+              filter: grayscale(80%);
+              //object-fit: scale-down;
             }
           }
+        }
+      }
+    }
+
+    .heroTabletPara {
+      color: #262f43;
+      font-weight: lighter;
+      margin: 0 auto;
+      padding: 0 200px;
+      font-family: 'Gilroy-Light', sans-serif;
+
+      p {
+        font-size: 25px;
+      }
+
+      #tag {
+        color: #091122cb;
+        letter-spacing: 2px;
+        line-height: 30px;
+        word-spacing: 20px;
+        font-size: 15px;
+        position: absolute;
+        bottom: -100px;
+        margin: 0px;
+
+        span {
+          background: #f5b272;
+          margin: 10px;
+          padding: 0 7px;
+          font-weight: bolder;
+          //border-radius: 15px;
+
+          &.even {
+            background: #fcdf04;
+          }
+
+          &.odd {
+            background: #a8d0e6;
+          }
+
+          &.brown {
+            background: #e98074;
+          }
+        }
+      }
+
+      @include tablet {
+        display: flex;
+        align-items: center;
+
+        p {
+          margin-right: 20px;
+
+          #tag {
+            font-size: 15px;
+            line-height: 20px;
+          }
+        }
+      }
+
+      @include mobile {
+        flex-direction: column;
+        justify-content: center;
+
+        p {
+          margin: 0;
+          margin-bottom: 50px;
+        }
+
+        #tag {
+          font-size: 10px;
+          word-spacing: 0px;
+          color: white;
+          letter-spacing: 0;
         }
       }
     }
   }
 }
 
+.heroFooter {
+  visibility: hidden;
+  position: fixed;
+  bottom: 4.5vh;
+  width: 100vw;
+  padding-left: 40px;
+  color: #262f43;
 
+  div {
+    overflow: hidden;
+
+    p {
+      margin: 0;
+      color: #262f43;
+    }
+  }
+}

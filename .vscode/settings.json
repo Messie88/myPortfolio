@@ -1,0 +1,21 @@
+{
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "window.zoomLevel": 2,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Palenight Theme",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "eslint.format.enable": true,
+  "prettier.jsxSingleQuote": true,
+  "typescript.preferences.quoteStyle": "single",
+  "javascript.preferences.quoteStyle": "single",
+  "editor.formatOnSave": true,
+  "prettier.singleQuote": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.format.semicolons": "remove",
+  "prettier.semi": false
+}

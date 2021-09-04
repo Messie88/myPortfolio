@@ -6,13 +6,23 @@
   src: local("Gilroy-Light"), url(/fonts/Gilroy/Gilroy-Light.otf) format("otf");
 }
 
-@font-face {
+/* @font-face {
   font-family: "Gilroy-ExtraBold";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: local("Gilroy-ExtraBold"),
     url(/fonts/Gilroy/Gilroy-ExtraBold.otf) format("otf");
+} */
+
+@font-face {
+  font-family: "AQUARIUM";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("AQUARIUM"), url(/fonts/AQUARIUM1/AQUARIUM.otf) format("otf"),
+    url(/fonts/AQUARIUM1/AQUARIUM.woff) format("woff"),
+    url(/fonts/AQUARIUM1/AQUARIUM.ttf) format("ttf");
 }
 
 @font-face {
@@ -36,7 +46,7 @@ body {
 }
 
 h1 {
-  font-family: "Gilroy-ExtraBold";
+  font-family: "AQUARIUM", sans-serif;
 }
 
 p {

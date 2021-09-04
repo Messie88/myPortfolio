@@ -17,8 +17,6 @@ $blu: #394359;
     display: flex;
     align-items: center;
     background: $beige;
-    height: 100%;
-    width: 100%;
     overflow: hidden;
 
     .backgroundImage {
@@ -50,7 +48,6 @@ $blu: #394359;
         justify-content: center;
         align-items: center;
         position: relative;
-        //border: 1px solid red;
         overflow: hidden;
         top: 400px;
 
@@ -63,11 +60,12 @@ $blu: #394359;
 
             li {
               list-style: none;
-              font-size: 6rem;
+              font-size: 4rem;
               font-weight: 700;
               cursor: pointer;
-              height: 135px;
-              overflow: hidden;
+              height: 100px;
+              overflow-y: hidden;
+              padding-right: 50px;
               position: relative;
               width: 550px;
 
@@ -113,7 +111,7 @@ $blu: #394359;
 
       .social {
         width: 400px;
-        line-height: 30px;
+        //line-height: 30px;
         overflow: hidden;
 
         h3 {
@@ -122,6 +120,8 @@ $blu: #394359;
           display: block;
           color: #fff;
           letter-spacing: 5px;
+          margin: 0;
+          margin-bottom: 20px;
         }
 
         a {
@@ -130,7 +130,7 @@ $blu: #394359;
           padding-right: 20px;
           font-weight: 700;
           transition: 0.3s ease-in-out;
-          font-size: 3rem;
+          font-size: 1rem;
 
           &:hover {
             color: #fff;
