@@ -17,7 +17,9 @@ const Hero = () => {
   useEffect(() => {
     //Images Vars
     const firstImg = images.firstElementChild
-    const secondImg = images.lastElementChild
+    const secondImg = images.children[2]
+    const thirdImg = images.lastElementChild
+    console.log(secondImg)
 
     //Content Vars
     const headlineSecondChild1 = content.children[0].children[0].children[0],
@@ -57,8 +59,6 @@ const Hero = () => {
       footerLine2 = footerContainer.children[1].children,
       footerLine3 = footerContainer.children[2].children
 
-    console.log('HIIIIII ', footerContainer)
-
     gsap.to(app, {
       css: { visibility: 'visible' },
       ease: Power3.easeOut,
@@ -77,7 +77,15 @@ const Hero = () => {
       opacity: 0,
       scale: 1.5,
       ease: Power4.easeOut,
-      delay: 1.1,
+      delay: 1,
+      duration: 1,
+    })
+    gsap.from(thirdImg.children, {
+      y: 500,
+      opacity: 0,
+      scale: 1.5,
+      ease: Power4.easeOut,
+      delay: 1.2,
       duration: 1,
     })
     gsap.from(
@@ -297,16 +305,25 @@ const Hero = () => {
                 <div className={styles.heroImage} id={styles.first}>
                   <img src='/images/image2.jpg' alt='front-img' />
                 </div>
-                <div
-                  className={styles.heroContentLineInner}
-                  style={{
-                    height: '100%',
-                    alignItems: 'center',
-                  }}
-                ></div>
+                <div className={styles.heroContentLineInner}></div>
                 <div className={styles.heroImage} id={styles.second}>
                   <img src='/images/image1.jpg' alt='back-img' />
                 </div>
+                <div className={styles.heroImage} style={{ width: '100px' }}>
+                  <img src='/images/image1.jpg' alt='back-img' />
+                </div>
+                {/* <div
+                  className={styles.heroImage}
+                  style={{ width: '30px', background: 'yellow' }}
+                >
+                  <img src='/images/image1.jpg' alt='back-img' />
+                </div>
+                <div
+                  className={styles.heroImage}
+                  style={{ width: '20px', background: 'yellow' }}
+                >
+                  <img src='/images/image1.jpg' alt='back-img' />
+                </div> */}
               </div>
             </div>
           </div>
