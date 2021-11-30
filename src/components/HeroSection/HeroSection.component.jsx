@@ -16,10 +16,9 @@ const Hero = () => {
 
   useEffect(() => {
     //Images Vars
-    const firstImg = images.firstElementChild
-    const secondImg = images.children[2]
-    const thirdImg = images.lastElementChild
-    console.log(secondImg)
+    const firstImg = images.firstElementChild,
+      secondImg = images.children[2],
+      thirdImg = images.lastElementChild
 
     //Content Vars
     const headlineSecondChild1 = content.children[0].children[0].children[0],
@@ -55,9 +54,10 @@ const Hero = () => {
 
     // Availability
     const footerContainer = footer.current,
-      footerLine1 = footerContainer.children[0].children,
-      footerLine2 = footerContainer.children[1].children,
-      footerLine3 = footerContainer.children[2].children
+      footerLine1 = footerContainer.children[0].children[0].children,
+      footerLine2 = footerContainer.children[0].children[1].children,
+      footerLine3 = footerContainer.children[0].children[2].children,
+      footerLanguage = footerContainer.children[1].children[0]
 
     gsap.to(app, {
       css: { visibility: 'visible' },
@@ -69,7 +69,7 @@ const Hero = () => {
       opacity: 0,
       scale: 1.5,
       ease: Power4.easeOut,
-      delay: 0.8,
+      delay: 0.5,
       duration: 1,
     })
     gsap.from(secondImg.children, {
@@ -77,7 +77,7 @@ const Hero = () => {
       opacity: 0,
       scale: 1.5,
       ease: Power4.easeOut,
-      delay: 1,
+      delay: 0.6,
       duration: 1,
     })
     gsap.from(thirdImg.children, {
@@ -85,7 +85,7 @@ const Hero = () => {
       opacity: 0,
       scale: 1.5,
       ease: Power4.easeOut,
-      delay: 1.2,
+      delay: 0.7,
       duration: 1,
     })
     gsap.from(
@@ -146,7 +146,7 @@ const Hero = () => {
         y: 100,
         ease: Power4.easeOut,
         skewY: 50,
-        delay: 1.25,
+        delay: 2,
         duration: 0.4,
       }
     )
@@ -154,13 +154,12 @@ const Hero = () => {
       css: { visibility: 'visible' },
       onComplete: null,
     })
-    gsap.from([footerLine1, footerLine2, footerLine3], {
+    gsap.from([footerLine1, footerLine2, footerLine3, footerLanguage], {
       stagger: { each: 0.04 },
-      y: 1200,
+      y: 100,
       ease: Power4.easeOut,
-      skewY: 55,
       delay: 1.3,
-      duration: 0.8,
+      duration: 1.5,
     })
   }, [])
 
@@ -168,18 +167,20 @@ const Hero = () => {
 
   useEffect(() => {
     const headlineSecond = content.children[0]
-    const headlineThirdChild1 = content.children[1].children[0].children[0]
-    const headlineThirdChild2 = content.children[1].children[0].children[1]
-    const headlineThirdChild3 = content.children[1].children[0].children[2]
-    const headlineThirdChild4 = content.children[1].children[0].children[3]
-    const headlineThirdChild5 = content.children[1].children[0].children[4]
-    const headlineThirdChild6 = content.children[1].children[0].children[5]
-    const headlineThirdChild7 = content.children[1].children[0].children[6]
-    const headlineThirdChild8 = content.children[1].children[0].children[7]
-    const headlineThirdChild9 = content.children[1].children[0].children[8]
+    const headlineThirdChild1 = content.children[1].children[0].children[0],
+      headlineThirdChild2 = content.children[1].children[0].children[1],
+      headlineThirdChild3 = content.children[1].children[0].children[2],
+      headlineThirdChild4 = content.children[1].children[0].children[3],
+      headlineThirdChild5 = content.children[1].children[0].children[4],
+      headlineThirdChild6 = content.children[1].children[0].children[5],
+      headlineThirdChild7 = content.children[1].children[0].children[6],
+      headlineThirdChild8 = content.children[1].children[0].children[7],
+      headlineThirdChild9 = content.children[1].children[0].children[8]
+
     //Images Vars
-    const firstImg = images.firstElementChild
-    const secondImg = images.lastElementChild
+    const firstImg = images.firstElementChild,
+      secondImg = images.children[2],
+      lastImg = images.lastElementChild
 
     gsap
       .timeline({
@@ -194,58 +195,73 @@ const Hero = () => {
           end: 'bottom 100', //285px
           pin: true,
           //markers: true,
-          scrub: 2,
+          scrub: 1,
         },
-      })
-      .fromTo(
-        headlineThirdChild1,
-        {
-          y: 0,
-          immediateRender: false,
-          ease: Power4.easeOut,
-          // skewY: 30,
-          // delay: 0.3,
-          // duration: 0.8,
-        },
-        {
-          y: 300,
-          immediateRender: false,
-          ease: Power4.easeOut,
-          // skewY: 30,
-          // delay: 0.3,
-          // duration: 0.8,
-        }
-      )
-      .to(headlineSecond, {
-        x: 70,
-        y: 90,
-        ease: 'Power4.easeOut',
-        //skewY: 30,
-        delay: 0.3,
-        duration: 0.8,
       })
       .to(
         firstImg,
         {
-          scale: 0.7,
-          y: -200,
+          // immediateRender: false,
+          y: -100,
           ease: 'Power4.easeOut',
-          duration: 3,
+          duration: 5,
           opacity: 0,
-        },
-        '<'
+          delay: 0.2,
+        }
+        // '<'
       )
       .to(
         secondImg,
         {
-          scale: 0.7,
-          y: 200,
+          // immediateRender: false,
+          y: -100,
           ease: 'Power4.easeOut',
-          duration: 3,
+          duration: 5,
           opacity: 0,
-        },
-        '<'
+          delay: 0.25,
+        }
+        // '<'
       )
+      .to(
+        lastImg,
+        {
+          // immediateRender: false,
+          y: -100,
+          ease: 'Power4.easeOut',
+          duration: 5,
+          opacity: 0,
+          delay: 0.3,
+        }
+        // '<'
+      )
+    // .fromTo(
+    //   headlineThirdChild1,
+    //   {
+    //     y: 0,
+    //     immediateRender: false,
+    //     ease: Power4.easeOut,
+    //     // skewY: 30,
+    //     // delay: 0.3,
+    //     // duration: 0.8,
+    //   },
+    //   {
+    //     y: 300,
+    //     immediateRender: false,
+    //     ease: Power4.easeOut,
+    //     // skewY: 30,
+    //     // delay: 0.3,
+    //     // duration: 0.8,
+    //   }
+    // )
+    // .to(headlineSecond, {
+    //   x: 300,
+    //   // y: 90,
+    //   ease: 'Power4.easeOut',
+    //   //skewY: 30,
+    //   delay: 5,
+    //   duration: 0.8,
+    // })
+
     // .from(imagesText, {
     //   opacity: 0,
     // })
@@ -310,7 +326,7 @@ const Hero = () => {
                   <img src='/images/image1.jpg' alt='back-img' />
                 </div>
                 <div className={styles.heroImage} style={{ width: '100px' }}>
-                  <img src='/images/image1.jpg' alt='back-img' />
+                  <img src='/images/image2.jpg' alt='back-img' />
                 </div>
                 {/* <div
                   className={styles.heroImage}
@@ -355,13 +371,18 @@ const Hero = () => {
       </div>
       <div className={styles.heroFooter} ref={footer}>
         <div>
-          <p>AVAILABLE</p>
+          <div>
+            <p>AVAILABLE</p>
+          </div>
+          <div>
+            <p>FOR</p>
+          </div>
+          <div>
+            <p>WORK</p>
+          </div>
         </div>
         <div>
-          <p>FOR</p>
-        </div>
-        <div>
-          <p>WORK</p>
+          <p>FR / EN</p>
         </div>
       </div>
     </>

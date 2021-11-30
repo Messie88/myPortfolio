@@ -47,6 +47,7 @@ $screen-md-min: 768px;
 
         p {
           letter-spacing: 15px;
+          font-weight: bolder;
         }
       }
 
@@ -204,6 +205,7 @@ $screen-md-min: 768px;
             display: flex;
             align-items: center;
             overflow: hidden;
+            // border: 1px solid red;
 
             &#second {
               //bottom: 205px;
@@ -212,10 +214,11 @@ $screen-md-min: 768px;
               // border-top-right-radius: 5px;
               // border-bottom-right-radius: 5px;
               //border: 1px solid red;
+              // border: 1px solid red;
 
               img {
-                // border-top-left-radius: 5px;
-                // border-bottom-left-radius: 5px;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
                 //height: 100%;
               }
             }
@@ -225,16 +228,17 @@ $screen-md-min: 768px;
               max-width: 300px;
 
               img {
-                // border-top-left-radius: 5px;
-                // border-bottom-left-radius: 5px;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
               }
             }
 
             img {
               //position: absolute;
-              //width: 100%;
+              // width: 100%;
               height: 100%;
               filter: grayscale(80%);
+              object-fit: contain;
             }
           }
         }
@@ -320,9 +324,12 @@ $screen-md-min: 768px;
 .heroFooter {
   visibility: hidden;
   position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   bottom: 4.5vh;
   width: 100vw;
-  padding-left: 40px;
+  padding: 0 40px;
   color: #262f43;
 
   div {
